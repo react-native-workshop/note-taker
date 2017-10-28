@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "padding": 20,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+     Please enter your note here
+  </Text>
+  <TextInput
+    multiline={true}
+    onChangeText={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "gray",
+          "borderWidth": 1,
+          "height": 100,
+          "width": 200,
+        },
+        undefined,
+      ]
+    }
+    value=""
+  />
+</View>
+`;
