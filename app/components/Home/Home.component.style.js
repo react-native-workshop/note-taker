@@ -1,8 +1,7 @@
-import {StyleSheet} from 'react-native';
 import theme from '../../styles/theme.style';
 import {headingText, textInput} from '../../styles/common.style';
 
-export default StyleSheet.create({
+export default {
   container: {
     flex: 1,
     paddingTop: theme.CONTAINER_PADDING,
@@ -40,16 +39,11 @@ export default StyleSheet.create({
     padding: 10,
     fontWeight: theme.FONT_WEIGHT_BOLD
   },
+  touchable: {
+    padding: 5,
+  },
   characterCount: {
     padding: 10,
     fontSize: theme.FONT_SIZE_SMALL
-  },
-  aboutUsWrapper: {
-    padding: 15,
-    alignItems: 'center',
-    backgroundColor: 'white'
-  },
-  aboutUs: {
-    fontWeight: theme.FONT_WEIGHT_BOLD
   }
-});
+};

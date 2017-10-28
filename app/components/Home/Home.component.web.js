@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+
 import TextArea from '../TextArea/TextArea.component';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
@@ -14,20 +14,20 @@ class Home extends Component {
   render () {
     const {setTitle, title, text, setText} = this.props;
     return (
-      <View style={styles.container}>
-        <Text style={styles.titleHeading}> Note Title</Text>
+      <div style={styles.container}>
+        <p style={styles.titleHeading}> Note Title</p>
         <TextArea style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
-        <Text style={styles.textAreaTitle}> Please type your note below </Text>
+        <p style={styles.textAreaTitle}> Please type your note below </p>
         <TextArea style={styles.textArea} multiline = {true}
           onChangeText={setText} value={text}/>
-        <View style={styles.bottomBarWrapper}>
-          <TouchableOpacity style={styles.touchable} onPress={this.addNote}>
-            <Text style={styles.saveBtn} >Save</Text>
-          </TouchableOpacity>
-          <Text style={styles.characterCount}>{text.length} characters</Text>
-        </View>
-      </View>
+        <div style={styles.bottomBarWrapper}>
+          <span style={styles.touchable} onClick={this.addNote}>
+            <p style={styles.saveBtn} >Save</p>
+          </span>
+          <p style={styles.characterCount}>{text.length} characters</p>
+        </div>
+      </div>
     );
   }
 }
