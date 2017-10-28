@@ -28,7 +28,6 @@ dependencies:
 test:
   override:
     - yarn lint
-    - yarn test && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
 deployment:
   staging:
     branch: [master, chapter-5]
