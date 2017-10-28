@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text} from 'react-native';
+import TextArea from '../TextArea/TextArea.component';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
 
@@ -14,12 +15,11 @@ class Home extends Component {
     const {setTitle, title, text, setText} = this.props;
     return (
       <View style={styles.container}>
-
         <Text style={styles.titleHeading}> Note Title</Text>
-        <TextInput style={styles.titleTextInput}
+        <TextArea style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}> Please type your note below </Text>
-        <TextInput style={styles.textArea} multiline = {true}
+        <TextArea style={styles.textArea} multiline = {true}
           onChangeText={setText} value={text}/>
         <View style={styles.bottomBarWrapper}>
           <Text style={styles.saveBtn} onPress={this.addNote}>Save</Text>
