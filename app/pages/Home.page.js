@@ -18,7 +18,6 @@ HomePage.propTypes = {
   setText: PropTypes.func,
   title: PropTypes.string,
   text: PropTypes.string,
-  navigation: PropTypes.object,
   saveNote: PropTypes.func,
   notes: PropTypes.array
 };
@@ -31,7 +30,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setTitle: (title) => {
-    console.log(title);
     dispatch(setTitle(title));
   },
   setText: (text) => dispatch(setText(text)),
@@ -39,6 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addNote(note));
     dispatch(setTitle(''));
     dispatch(setText(''));
+    alert('Saved Note: ' + note.title + ' ' + note.text);
   }
 });
 
