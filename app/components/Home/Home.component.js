@@ -13,7 +13,7 @@ class Home extends Component {
       <View style={styles.container}>
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
-            onChangeText={this.setTitle} value={this.state.title} />
+          onChangeText={this.setTitle} value={this.state.title} />
         <Text style={styles.textAreaTitle}> Please type your note below </Text>
         <TextArea style={styles.textArea}/>
       </View>
