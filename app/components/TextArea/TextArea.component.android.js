@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { TextInput, View } from 'react-native';
+import React, {Component} from 'react';
+import {TextInput, View} from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './TextArea.component.style';
 
 class TextArea extends Component {
   state = {
-    text : ''
+    text: ''
   }
-  render() {
+  render () {
     const {...extraProps} = this.props;
     const alignTextTop = {textAlignVertical: 'top'};
     return (
