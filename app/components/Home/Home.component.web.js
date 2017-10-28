@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import TextArea from '../TextArea/TextArea.component';
 import PropTypes from 'prop-types';
 import styles from './Home.component.style';
+import Link from '../Link/Link.component';
 
 class Home extends Component {
   addNote = () => {
@@ -12,7 +13,7 @@ class Home extends Component {
     }
   }
   render () {
-    const {setTitle, title, text, setText} = this.props;
+    const {setTitle, title, text, setText, linkToOpen} = this.props;
     return (
       <div style={styles.container}>
         <p style={styles.titleHeading}> Note Title</p>
@@ -27,6 +28,7 @@ class Home extends Component {
           </span>
           <p style={styles.characterCount}>{text.length} characters</p>
         </div>
+        <Link link={linkToOpen} text='Click here to open'/>
       </div>
     );
   }
@@ -40,7 +42,8 @@ Home.propTypes = {
   title: PropTypes.string,
   saveNote: PropTypes.func,
   notes: PropTypes.array,
-  text: PropTypes.string
+  text: PropTypes.string,
+  linkToOpen: PropTypes.string
 };
 
 export default Home;

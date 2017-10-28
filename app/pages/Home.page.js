@@ -7,8 +7,9 @@ import Home from '../components/Home/Home.component';
 class HomePage extends Component {
   render () {
     const {setTitle, setText, title, text, saveNote, notes} = this.props;
+    const linkToOpen = 'http://google.co.in';
     return (
-      <Home setTitle={setTitle} saveNote={saveNote} notes={notes} setText={setText} title={title} text={text} />
+      <Home linkToOpen={linkToOpen} setTitle={setTitle} saveNote={saveNote} notes={notes} setText={setText} title={title} text={text} />
     );
   }
  }
