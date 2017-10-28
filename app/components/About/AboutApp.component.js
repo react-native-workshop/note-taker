@@ -10,6 +10,9 @@ class AboutApp extends Component {
       <View style={styles.container}>
         <Text>About the App </Text>
         {navigatingFrom ? <Text>Navigating from: {navigatingFrom} </Text> : null}
+        <Text style={styles.centerAlign}>
+          {'\n\n'}This app demonstrates the capabilities of react-native. {'\n\n'}This is a simple note taking application which helps you store your notes on your device.
+        </Text>
       </View>
     );
   }
