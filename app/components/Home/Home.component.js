@@ -6,11 +6,6 @@ import Notes from '../Notes/Notes.component';
 import Touchable from 'react-native-platform-touchable';
 import noop from 'lodash/noop';
 
-// Icon Usage
-import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
-import icoMoonConfig from '../../assets/selection.json';
-const Icon = createIconSetFromIcoMoon(icoMoonConfig);
-
 class Home extends Component {
   addNote = () => {
     const {saveNote, title, text} = this.props;
@@ -26,7 +21,7 @@ class Home extends Component {
         <Text style={styles.titleHeading}> Note Title</Text>
         <TextInput style={styles.titleTextInput}
             onChangeText={setTitle} value={title} />
-        <Text style={styles.textAreaTitle}> Please type your note below  <Icon name='notepad' size={15}/></Text>
+        <Text style={styles.textAreaTitle}> Please type your note below </Text>
         <TextInput style={styles.textArea} multiline = {true}
           onChangeText={setText} value={text}/>
         <KeyboardAvoidingView style={styles.bottomBar}>
