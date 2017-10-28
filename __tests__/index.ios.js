@@ -1,3 +1,4 @@
+'use strict';
 import 'react-native';
 import React from 'react';
 import Index from '../index.ios.js';
