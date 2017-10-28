@@ -3,6 +3,7 @@ import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import styles from './Home.component.style';
 import Notes from '../Notes/Notes.component.js';
 import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
 
 class Home extends Component {
   addNote = () => {
@@ -40,4 +41,7 @@ Home.propTypes = {
   text: PropTypes.string
 };
 
+Home.defaultProps = {
+  saveNote: noop
+};
 export default Home;
