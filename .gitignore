@@ -55,3 +55,4 @@ fastlane/screenshots
 # jest
 cache
 coverage
+!dev_release.keystore

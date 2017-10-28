@@ -1,0 +1,35 @@
+general:
+  artifacts:
+    - "android/app/build/outputs/apk/app-release.apk"
+machine:
+  java:
+      version: oraclejdk8
+
+  environment:
+    ANDROID_HOME: "/usr/local/android-sdk-linux"
+    ANDROID_SDK_HOME: "/usr/local/android-sdk-linux"
+    ANDROID_SDK_ROOT: "/usr/local/android-sdk-linux"
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter  "platforms-android-23"
+    - echo y | android update sdk --no-ui --all --filter  "build-tools-23.0.1"
+    - echo y | android update sdk --no-ui --all --filter  "extras-google-m2repository"
+    - echo y | android update sdk --no-ui --all --filter  "extras-android-m2repository"
+    - echo y | android update sdk --no-ui --all --filter "tools"
+
+  override:
+    # Install node modules
+    - yarn
+  cache_directories:
+    - node_modules
+test:
+  override:
+    - yarn lint
+    - yarn test && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
+deployment:
+  staging:
+    branch: [master, chapter-5]
+    commands:
+      # Build the APK
+      - BUILD_NAME=$CIRCLE_BUILD_NUM BUILD_NUMBER=$CIRCLE_BUILD_NUM npm run build:android

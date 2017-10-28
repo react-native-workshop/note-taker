@@ -88,6 +88,8 @@ def enableSeparateBuildPerCPUArchitecture = false
  * Run Proguard to shrink the Java bytecode in release builds.
  */
 def enableProguardInReleaseBuilds = false
+def vCode = System.getenv("BUILD_NUMBER") ?: "0"
+def vName = System.getenv("BUILD_NAME") ?: "1.0.local"
 
 android {
     compileSdkVersion 23
@@ -97,8 +99,8 @@ android {
         applicationId "com.notetaker"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(vCode)
+        versionName vName
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -111,10 +113,19 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+     release {
+         storeFile file("dev_release.keystore")
+         storePassword "password"
+         keyAlias "dev-alias"
+         keyPassword "password"
+      }
+    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
