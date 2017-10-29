@@ -4,6 +4,8 @@ general:
 machine:
   java:
       version: oraclejdk8
+  node:
+      version: 8.1.2
 
   environment:
     ANDROID_HOME: "/usr/local/android-sdk-linux"
@@ -19,8 +21,6 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter  "extras-google-m2repository"
     - echo y | android update sdk --no-ui --all --filter  "extras-android-m2repository"
     - echo y | android update sdk --no-ui --all --filter "tools"
-    - nvm install 8.1.2
-    - nvm use 8.1.2
 
   override:
     # Install node modules
