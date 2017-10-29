@@ -18,9 +18,9 @@ class Home extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={styles.titleHeading}> Note Title</Text>
+        <Text style={styles.titleHeading}> Note Title 23242434</Text>
         <TextInput style={styles.titleTextInput}
-            onChangeText={setTitle} value={title} />
+          onChangeText={setTitle} value={title} />
         <Text style={styles.textAreaTitle}> Please type your note below </Text>
         <TextInput style={styles.textArea} multiline = {true}
           onChangeText={setText} value={text}/>
